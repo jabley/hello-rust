@@ -3,7 +3,9 @@ fn main() {
 
     let r1 = &s; // no problem
     let r2 = &s; // no problem
-    let r3 = &mut s; // BIG PROBLEM
-
-    println!("{}, {}, and {}", r1, r2, r3);
+    println!("{} and {}", r1, r2);
+    // r1 and r2 are no longer used after this point
+    
+    let r3 = &mut s; // no PROBLEM
+    println!("{}", r3);
 }
