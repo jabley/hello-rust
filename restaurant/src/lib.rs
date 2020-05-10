@@ -6,21 +6,15 @@ mod tests {
     }
 }
 
-mod front_of_house {
-    pub mod hosting {
-        use std::collections::HashMap;
+use std::fmt;
+use std::io;
 
-        pub fn add_to_waitlist() {
-            let mut map = HashMap::new();
-            map.insert(1, 2);
-        }
-    }
+fn function1() -> fmt::Result {
+    // --snip--
+    Ok(())
 }
 
-use crate::front_of_house::hosting::add_to_waitlist;
-
-pub fn eat_at_restaurant() {
-    add_to_waitlist();
-    add_to_waitlist();
-    add_to_waitlist();
+fn function2() -> io::Result<()> {
+    // --snip--
+    Ok(())
 }
